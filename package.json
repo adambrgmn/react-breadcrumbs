@@ -1,5 +1,5 @@
 {
-  "name": "react-breadcrumbs",
+  "name": "@fransvilhelm/react-breadcrumbs",
   "version": "0.0.0-development",
   "main": "dist/index.js",
   "module": "dist/react-breadcrumbs.esm.js",
