@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "@types/jest": "^25.1.1",
+    "@types/lodash": "^4.14.149",
+    "@types/nanoid": "^2.1.0",
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "babel-eslint": "10.x",
@@ -86,6 +88,9 @@
   },
   "dependencies": {
     "@testing-library/jest-dom": "^5.0.2",
-    "@testing-library/react": "^9.4.0"
+    "@testing-library/react": "^9.4.0",
+    "lodash": "^4.17.15",
+    "lodash-es": "^4.17.15",
+    "nanoid": "^2.1.10"
   }
 }
