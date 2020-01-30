@@ -1,10 +1,14 @@
 {
   "name": "react-breadcrumbs",
-  "version": "0.1.0",
+  "version": "0.0.0-development",
   "main": "dist/index.js",
   "module": "dist/react-breadcrumbs.esm.js",
   "author": "Adam Bergman",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/adambrgmn/react-breadcrumbs.git"
+  },
   "files": [
     "dist"
   ],
@@ -18,7 +22,13 @@
     "prepare": "tsdx build",
     "semantic-release": "semantic-release"
   },
+  "dependencies": {
+    "lodash": "4.x",
+    "nanoid": "2.x"
+  },
   "devDependencies": {
+    "@testing-library/jest-dom": "^5.0.2",
+    "@testing-library/react": "^9.4.0",
     "@types/jest": "^25.1.1",
     "@types/lodash": "^4.14.149",
     "@types/nanoid": "^2.1.0",
@@ -85,12 +95,5 @@
       "prettier --write",
       "git add"
     ]
-  },
-  "dependencies": {
-    "@testing-library/jest-dom": "^5.0.2",
-    "@testing-library/react": "^9.4.0",
-    "lodash": "^4.17.15",
-    "lodash-es": "^4.17.15",
-    "nanoid": "^2.1.10"
   }
 }

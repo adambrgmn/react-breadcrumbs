@@ -1,7 +1,7 @@
 language: node_js
 
 node_js:
-  - 8
+  - 10
 
 cache:
   yarn: true
@@ -11,7 +11,7 @@ cache:
 notifications:
   email: false
 
-script: yarn run test && yarn run build
+script: yarn test && yarn build
 
 branches:
   only:
@@ -25,4 +25,4 @@ jobs:
         provider: script
         skip_cleanup: true
         script:
-          - yarn run semantic-release
+          - yarn semantic-release
