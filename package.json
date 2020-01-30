@@ -92,8 +92,7 @@
       "tsdx lint"
     ],
     "*.{js,ts,jsx,tsx,json,md,yml,html}": [
-      "prettier --write",
-      "git add"
+      "prettier --write"
     ]
   }
 }
