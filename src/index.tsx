@@ -3,7 +3,7 @@ import { debounce } from 'lodash';
 import nanoid from 'nanoid';
 import { useSafeContext } from './utils';
 
-interface BreadcrumbItem {
+export interface BreadcrumbItem {
   id: string;
   label: React.ReactNode;
   url: string;
