@@ -5,10 +5,10 @@ import {
   fireEvent,
   waitForElementToBeRemoved,
 } from '@testing-library/react';
-import { BreadcrumbsProvider, useBreadcrumb, useBreadcrumbs } from '../src';
+import { BreadcrumbsProvider, useBreadcrumb, useTrail } from '../src';
 
 const ListBreadcrumbs = () => {
-  const breadcrumbs = useBreadcrumbs();
+  const breadcrumbs = useTrail();
   return (
     <ul>
       {breadcrumbs.map(crumb => (
@@ -82,7 +82,7 @@ it('controls a list of breadcrumbs', async () => {
 
 it('will throw an error if you try to render anything outside the provider', () => {
   const ErrorComponent = () => {
-    const breadcrumbs = useBreadcrumbs();
+    const breadcrumbs = useTrail();
     return (
       <ul>
         {breadcrumbs.map(({ id, label }) => (

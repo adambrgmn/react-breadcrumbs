@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { debounce } from 'lodash';
 import nanoid from 'nanoid';
-import { useSafeContext } from './utils';
+import { createNamedContext, useSafeContext } from './utils';
 
 export interface BreadcrumbItem {
   id: string;
@@ -15,10 +15,10 @@ interface BreadcrumbsContextType {
   removeBreadcrumb: (crumb: BreadcrumbItem) => void;
 }
 
-const BreadcrumbsContext = React.createContext<BreadcrumbsContextType | void>(
+const BreadcrumbsContext = createNamedContext<BreadcrumbsContextType | void>(
+  'BreadcrumbsContext',
   undefined,
 );
-BreadcrumbsContext.displayName = 'BreadcrumbsContext';
 
 export const BreadcrumbsProvider: React.FC = ({ children }) => {
   const [breadcrumbs, setBreadcrumbs] = React.useState<BreadcrumbItem[]>([]);
@@ -84,6 +84,6 @@ export const useBreadcrumb = ({ label, url }: Omit<BreadcrumbItem, 'id'>) => {
   }, [addBreadcrumb, removeBreadcrumb, crumb]);
 };
 
-export const useBreadcrumbs = (): BreadcrumbItem[] => {
+export const useTrail = (): BreadcrumbItem[] => {
   return useSafeContext(BreadcrumbsContext).breadcrumbs;
 };

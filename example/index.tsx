@@ -9,7 +9,7 @@ import {
   useParams,
   useRouteMatch,
 } from 'react-router-dom';
-import { BreadcrumbsProvider, useBreadcrumb, useBreadcrumbs } from '../.';
+import { BreadcrumbsProvider, useBreadcrumb, useTrail } from '../.';
 
 const sectionStyle = {
   width: 'auto',
@@ -87,7 +87,7 @@ const Year: React.FC = () => {
 };
 
 const Breadcrumbs = () => {
-  const breadcrumbs = useBreadcrumbs();
+  const breadcrumbs = useTrail();
 
   return (
     <div>
