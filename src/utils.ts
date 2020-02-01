@@ -1,4 +1,5 @@
 import { useContext, createContext } from 'react';
+import invariant from 'invariant';
 
 export function createNamedContext<V>(name: string, defaultValue: V) {
   const context = createContext(defaultValue);
@@ -8,11 +9,9 @@ export function createNamedContext<V>(name: string, defaultValue: V) {
 
 export function useSafeContext<T>(context: React.Context<T | void>): T {
   const value = useContext(context);
-  if (!value) {
-    throw new Error(
-      `You can only use this hook within a ${context.displayName} provider`,
-    );
-  }
-
+  invariant(
+    value,
+    `You can must wrap any components using ${context.displayName} inside a ${context.displayName}.Provider`,
+  );
   return value;
 }
