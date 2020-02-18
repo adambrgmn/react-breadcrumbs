@@ -23,7 +23,7 @@ import React from 'react';
 import { useParams, useRouteMatch } from 'react-router-dom';
 import { useBreadcrumb } from '@fransvilhelm/react-breadcrumbs';
 
-export const Trail = () => {
+export const Page = () => {
   const { label } = useParams();
   const { url } = useRouteMatch();
   useBreadcrumb({ label, url });
@@ -37,14 +37,14 @@ And then anywhere else:
 ```jsx
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { useBreadcrumbs } from '@frasnvilhelm/react-breadcrumbs';
+import { useTrail } from '@frasnvilhelm/react-breadcrumbs';
 
 export const Breadcrumbs = () => {
-  const breadcrumbs = useBreadcrumbs();
+  const trail = useTrail();
 
   return (
     <ul>
-      {breadcrumbs.map(({ label, url, id }) => (
+      {trail.map(({ label, url, id }) => (
         <li key={id}>
           <Link to={url}>{label}</Link>
         </li>
@@ -64,7 +64,7 @@ export const App = () => {
   return (
     <BreadcrumbsProvider>
       <Breadcrumbs />
-      <Trail />
+      <Page />
     </BreadcrumbsProvider>
   );
 };
