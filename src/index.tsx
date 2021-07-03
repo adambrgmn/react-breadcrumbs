@@ -78,8 +78,8 @@ export const useBreadcrumb = ({ label, url }: Omit<BreadcrumbItem, 'id'>) => {
     url,
   ]);
 
-  addBreadcrumb(crumb);
   React.useEffect(() => {
+    addBreadcrumb(crumb);
     return () => removeBreadcrumb(crumb);
   }, [addBreadcrumb, removeBreadcrumb, crumb]);
 };
